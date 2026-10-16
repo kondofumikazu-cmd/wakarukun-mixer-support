@@ -1,4 +1,4 @@
-# わかるくんミキサー / Wakarukun Mixer
+# KF文字起こしミキサー / KF transcription mixer
 
 公開プライバシーポリシーとサポートページ。
 
