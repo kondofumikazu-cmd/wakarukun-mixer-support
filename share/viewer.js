@@ -116,3 +116,4 @@ document.addEventListener('visibilitychange', () => {
   if (!document.hidden && !stopped && socket?.readyState === WebSocket.CLOSED) { clearTimeout(timer); connect(); }
 });
 window.addEventListener('pagehide', () => { clearInterval(heartbeat); clearTimeout(timer); socket?.close(); });
+window.addEventListener('hashchange', () => { finish('接続を切り替えています…'); location.reload(); });
