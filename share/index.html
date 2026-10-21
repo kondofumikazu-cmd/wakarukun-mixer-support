@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src wss://fumixer-caption-sharing.kondofumikazu.workers.dev; base-uri 'none'; form-action 'none'">
+  <title>リアルタイム字幕 · KF文字起こしミキサー</title>
+  <link rel="stylesheet" href="./viewer.css">
+  <script src="./viewer.js" type="module"></script>
+</head>
+<body>
+  <header><p class="brand">KF文字起こしミキサー</p><h1 id="title">リアルタイム字幕</h1>
+    <p id="status" role="status" aria-live="polite">接続を準備しています…</p></header>
+  <main><div id="captions" aria-label="共有された字幕"></div><p id="empty">相手の字幕を待っています。</p></main>
+  <footer>
+    <div class="controls"><label>文字の大きさ <input id="size" type="range" min="18" max="60" step="2" value="30"></label>
+      <label><input id="furigana" type="checkbox"> ふりがなを表示</label>
+      <label><input id="follow" type="checkbox" checked> 最新に追従</label><button id="stop" type="button">閲覧を終了</button></div>
+    <p>字幕は共有元と閲覧先で暗号化・復号されます。QRコードやリンクを知っている人が閲覧できます。共有の停止後は新しい字幕を受信しません。</p>
+  </footer>
+</body>
+</html>
