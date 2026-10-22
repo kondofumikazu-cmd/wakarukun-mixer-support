@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>KF transcription mixer — microphone service demonstration</title>
+<style>body{font:17px/1.7 system-ui,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;color:#172033}h1{font-size:1.6rem}video{display:block;width:min(100%,380px);margin:24px auto;background:#111}a{color:#0068b8}</style>
+<h1>KF transcription mixer: background microphone input</h1>
+<p>Google Play review demonstration for Android 1.0.0 (3), package <code>jp.fumifumi.WakarukunMixer</code>.</p>
+<video controls playsinline preload="metadata" aria-label="Starting microphone input, continuing in the background, and stopping from the notification"><source src="foreground-microphone.mp4" type="video/mp4"><a href="foreground-microphone.mp4">Download the MP4 demonstration</a></video>
+<ol>
+<li>Open Settings (設定), then Audio (音声), and select external speech recognition for this demonstration.</li>
+<li>Tap Start (開始) in the visible app. The microphone foreground service starts after this user action.</li>
+<li>Press Home. Microphone capture continues, with the persistent notification “マイクを使用しています” (Using the microphone).</li>
+<li>Tap Stop (停止) in that notification. Capture and the foreground service stop. The app returns to its Start state.</li>
+</ol>
+<p>This screen recording uses an Android emulator with host microphone input disabled. It demonstrates the service controls and notification, rather than speech recognition accuracy. No personal audio, account details, or real conversation is included. The default on-device recognition setting is restored at the end.</p>
+<p lang="ja">この動画は、利用者の「開始」操作による音声入力の開始、ホーム画面へ移動した後のマイク使用通知、通知の「停止」による終了を示します。ホストマイク入力を無効にしたエミュレーターで撮影しています。音声認識精度の実証動画ではありません。</p>
+<p><a href="../en/privacy.html">Privacy policy</a> · <a href="../ja/privacy.html" lang="ja">プライバシーポリシー</a> · <a href="../ja/support.html">Support</a></p>
+</html>
