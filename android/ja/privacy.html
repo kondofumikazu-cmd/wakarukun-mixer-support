@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="KF文字起こしミキサー · Android / Chromebook · プライバシーポリシー">
+<title>プライバシーポリシー · KF文字起こしミキサー</title>
+<link rel="canonical" href="https://kondofumikazu-cmd.github.io/wakarukun-mixer-support/android/ja/privacy.html">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">本文へ</a>
+<header><a href="../index.html">KF文字起こしミキサー</a><nav aria-label="ページ"><a href="privacy.html" aria-current="page">プライバシーポリシー</a>
+<a href="support.html">サポート</a>
+<a href="data-deletion.html">データの削除手順</a>
+<a href="../en/privacy.html" lang="en">English</a></nav></header>
+<main id="main">
+<p class="eyebrow">Android / Chromebook</p>
+<h1>プライバシーポリシー</h1>
+<p class="app">KF文字起こしミキサー</p>
+<p class="updated">更新日: <time datetime="2026-10-23">2026-10-23</time></p>
+<aside class="contents"><h2>目次</h2><ul>
+<li><a href="#section-1">適用範囲と提供者</a></li>
+<li><a href="#section-2">音声と音声認識</a></li>
+<li><a href="#section-3">字幕・辞書・設定の端末保存</a></li>
+<li><a href="#section-4">翻訳とGoogle ML Kit</a></li>
+<li><a href="#section-5">任意のGoogleドライブ同期</a></li>
+<li><a href="#section-6">任意の字幕共有</a></li>
+<li><a href="#section-7">ファイル共有・カメラ・権限</a></li>
+<li><a href="#section-8">保持と削除</a></li>
+<li><a href="#section-9">連絡先とポリシーの更新</a></li>
+<li><a href="#section-10">外部サービスの説明</a></li>
+</ul></aside>
+<section aria-labelledby="section-1"><h2 id="section-1">適用範囲と提供者</h2>
+<p>このポリシーは、Fumikazu Kondoが提供するKF文字起こしミキサーのAndroid・Chromebook版（パッケージ名：<code>jp.fumifumi.WakarukunMixer</code>）に適用します。アプリ独自のアカウント登録は不要です。Googleドライブ同期を使う場合だけ、Googleアカウントへの接続とアクセス許可が必要です。</p>
+<p>Apple版の取り扱いは、<a href="../../ja/privacy.html">Apple版のプライバシーポリシー</a>をご覧ください。</p>
+</section>
+<section aria-labelledby="section-2"><h2 id="section-2">音声と音声認識</h2>
+<p>マイクの音声は音量調整、音声処理、字幕作成に使います。初期設定は端末内音声認識です。選択した言語のモデルの準備には通信が必要になる場合があります。端末内認識を選んだ場合、利用できないことを理由に外部認識へ自動で切り替えることはありません。</p>
+<p>「外部の音声認識を使用」を選ぶと、音声や認識用の語句ヒントが、端末に設定されたGoogleなどの音声認識サービスへ送信される場合があります。サービス側での処理・保存・削除は、その提供者の設定とポリシーに従います。音声を開発者の字幕共有サーバーへ送ることはありません。</p>
+</section>
+<section aria-labelledby="section-3"><h2 id="section-3">字幕・辞書・設定の端末保存</h2>
+<p>保存した字幕の原文・訳文・タイトル・話者名・言語・時刻・読み情報、ユーザー辞書の登録語・読み・言語、設定とQR発行履歴を、機能の提供に必要な範囲で端末内に保存します。同期の変更・競合・削除を処理するための識別子や変更履歴も保存します。字幕に個人情報が含まれる場合があります。</p>
+<p>アプリの通常利用に、氏名、住所、電話番号、連絡先一覧、位置情報の登録は求めません。開発者が字幕や音声を学習用データとして収集する機能はありません。</p>
+</section>
+<section aria-labelledby="section-4"><h2 id="section-4">翻訳とGoogle ML Kit</h2>
+<p>Google ML Kitの言語モデルを準備した後、字幕の翻訳は端末内で行います。翻訳対象の文章と翻訳結果は、ML KitによってGoogleのサーバーへ送信されません。言語モデルやQR読み取り用モジュールの取得・更新には通信を使います。</p>
+<p>ML KitはAPIの性能・利用状況に関する指標をGoogleへ送信します。Googleはこれを品質改善、保守、不正利用の検出などに使います。アプリ独自の広告・行動追跡・アクセス解析は実装していませんが、GoogleのSDKやサービスによる診断情報の処理があります。詳細は<a href="https://developers.google.com/ml-kit/terms">ML Kitのプライバシー説明</a>をご確認ください。</p>
+</section>
+<section aria-labelledby="section-5"><h2 id="section-5">任意のGoogleドライブ同期</h2>
+<p>「Googleアカウントに接続」で許可した場合、保存字幕とユーザー辞書を、選んだGoogleアカウントのGoogleドライブ内のアプリ専用領域に読み書きして同期します。同期対象には原文・訳文・タイトル・話者名・時刻・読み・登録語・言語・競合情報・削除情報が含まれます。音声とQR発行履歴はこの同期に含めません。</p>
+<p>要求するDrive権限はアプリ専用領域の<code>drive.appdata</code>です。通常のマイドライブにある無関係なファイルを読み取る権限は要求しません。接続するアカウントを識別・表示するため、Googleからアカウント識別子とメールアドレスを取得します。認可トークンは端末のGoogle認可機能を通じて扱い、字幕ファイルや字幕共有サーバーへ送りません。</p>
+<p>通信にはHTTPSを使います。Driveの同期データは、後述する字幕共有のエンドツーエンド暗号化とは別の保存です。Google側の保管・保持・削除にはGoogleの条件が適用されます。同期の停止・接続解除後も、端末内の保存データと既にDriveへ保存したデータは自動では消えません。</p>
+<p>Google APIから取得した情報の利用・提供は、<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>のLimited Use要件に従います。Googleアカウントのデータを広告、販売、開発者によるAI学習用の収集には使いません。</p>
+</section>
+<section aria-labelledby="section-6"><h2 id="section-6">任意の字幕共有</h2>
+<p>共有を明示的に開始したときだけ、開始後の字幕・訳文・話者名・タイトル・言語・時刻・読み情報をAES-256-GCMで端末内暗号化し、Cloudflare上の中継サーバーへ送ります。音声、共有前の保存履歴、辞書全体、設定は送りません。復号用の秘密は送信端末と閲覧リンクに保持し、中継サーバーには送りません。</p>
+<p>中継サーバーは最新の暗号化データをメモリに保持します。字幕本文、暗号化本文、復号鍵はディスクに保存しません。接続管理に必要な認証情報のハッシュ、共有世代、期限、最終送信時刻を保管します。共有は最大8時間で、停止・期限切れ、または送信が途絶えてから90秒以内に終了し、中継データと接続管理情報を削除します。</p>
+<p>閲覧リンクやQRコードを持つ相手は内容を読み、自分の端末に保存できます。相手が保存したコピーや画面撮影は取り消せません。ブラウザの閲覧ページはGitHub Pagesが配信し、復号は閲覧端末内で行います。共有前に会話の参加者へ説明し、必要な同意を得てください。</p>
+<p>CloudflareやGitHubは、通信に伴うIPアドレス・接続時刻などを処理する場合があります。内容の暗号化によって接続情報まで匿名になるわけではありません。基盤側の保持・削除は各社のポリシーに従います。</p>
+</section>
+<section aria-labelledby="section-7"><h2 id="section-7">ファイル共有・カメラ・権限</h2>
+<p>字幕を<code>.fumicap</code>ファイルとして書き出すと、タイトル、字幕、訳文、話者名、時刻、読み情報を含みます。音声や辞書全体は含みません。この書き出しファイルにアプリ独自の暗号化は行いません。保存先や共有先はご自身で選択し、相手の取り扱いを確認してください。</p>
+<p>QRのカメラ読み取りにはGoogleの読み取り画面を、画像からの読み取りには選択した画像を使います。画像は読み取りのために処理し、開発者のサーバーへ送りません。マイク、接続した音声機器、通知などの権限は該当機能のために使い、端末の設定で変更できます。</p>
+</section>
+<section aria-labelledby="section-8"><h2 id="section-8">保持と削除</h2>
+<p>端末内の字幕・辞書・QR履歴は、アプリ内の削除操作または端末設定でのアプリデータ消去まで保持します。同期を有効にして削除した字幕・辞書は、通信が成功したときに削除情報を他の同期先へ反映します。再出現を防ぐため、内容を含まない削除記録や同期の識別情報を保持する場合があります。</p>
+<p>端末からアプリを削除するだけでは、Drive上のデータ、書き出したファイル、閲覧者の保存コピーは消えません。全体の削除には<a href="data-deletion.html">データの削除手順</a>をご利用ください。Googleなど外部サービスにおける音声・診断情報の保持は、各サービスの設定とポリシーに従います。</p>
+</section>
+<section aria-labelledby="section-9"><h2 id="section-9">連絡先とポリシーの更新</h2>
+<p>お問い合わせで受け取ったメールアドレスや内容は、問い合わせ対応に必要な範囲で使います。音声や字幕の実データ、Googleのパスワード、認証コードは送らないでください。問い合わせ情報の削除を希望する場合も、下記へご連絡ください。</p>
+<p>提供者：Fumikazu Kondo<br>連絡先：<a href="mailto:kondofumikazu@icloud.com">kondofumikazu@icloud.com</a></p>
+<p>このポリシーを変更した場合は、ページの更新日を変更してお知らせします。</p>
+</section>
+<section aria-labelledby="section-10"><h2 id="section-10">外部サービスの説明</h2>
+<ul>
+<li><a href="https://policies.google.com/privacy?hl=ja">Google プライバシーポリシー</a></li>
+<li><a href="https://developers.google.com/ml-kit/terms">Google ML Kit Terms &amp; Privacy</a></li>
+<li><a href="https://developers.google.com/workspace/drive/api/guides/appdata">Google Driveのアプリ専用領域</a></li>
+<li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare プライバシーポリシー</a></li>
+<li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub プライバシーに関する声明</a></li>
+</ul>
+</section>
+</main>
+<footer>© 2026 Fumikazu Kondo · <a href="mailto:kondofumikazu@icloud.com">kondofumikazu@icloud.com</a><br><a href="../../index.html">Apple版・その他の言語</a></footer>
+</body>
+</html>

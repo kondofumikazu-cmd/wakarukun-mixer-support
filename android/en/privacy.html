@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="KF transcription mixer · Android / Chromebook · Privacy policy">
+<title>Privacy policy · KF transcription mixer</title>
+<link rel="canonical" href="https://kondofumikazu-cmd.github.io/wakarukun-mixer-support/android/en/privacy.html">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><a href="../index.html">KF transcription mixer</a><nav aria-label="Pages"><a href="privacy.html" aria-current="page">Privacy policy</a>
+<a href="support.html">Support</a>
+<a href="data-deletion.html">Data deletion</a>
+<a href="../ja/privacy.html" lang="ja">日本語</a></nav></header>
+<main id="main">
+<p class="eyebrow">Android / Chromebook</p>
+<h1>Privacy policy</h1>
+<p class="app">KF transcription mixer</p>
+<p class="updated">Updated: <time datetime="2026-10-23">2026-10-23</time></p>
+<aside class="contents"><h2>On this page</h2><ul>
+<li><a href="#section-1">Scope and provider</a></li>
+<li><a href="#section-2">Audio and speech recognition</a></li>
+<li><a href="#section-3">Local captions, dictionaries and settings</a></li>
+<li><a href="#section-4">Translation and Google ML Kit</a></li>
+<li><a href="#section-5">Optional Google Drive sync</a></li>
+<li><a href="#section-6">Optional live caption sharing</a></li>
+<li><a href="#section-7">Files, scanning and permissions</a></li>
+<li><a href="#section-8">Retention and deletion</a></li>
+<li><a href="#section-9">Contact and changes</a></li>
+<li><a href="#section-10">External service information</a></li>
+</ul></aside>
+<section aria-labelledby="section-1"><h2 id="section-1">Scope and provider</h2>
+<p>This policy covers KF transcription mixer for Android and Chromebook, provided by Fumikazu Kondo. Its application ID is <code>jp.fumifumi.WakarukunMixer</code>. The app does not create an app-specific account. Optional Google Drive sync requires a Google account and your authorization.</p>
+<p>See the <a href="../../en-US/privacy.html">Apple privacy policy</a> for the Apple versions.</p>
+</section>
+<section aria-labelledby="section-2"><h2 id="section-2">Audio and speech recognition</h2>
+<p>Microphone audio is used for audio processing and caption creation. On-device recognition is the default. Preparing language models may require a download. Selecting on-device recognition does not automatically enable external recognition if it is unavailable.</p>
+<p>If you select external recognition, audio and recognition hints may be sent to the speech service configured on your device, such as Google. Its settings and policies govern that processing and retention. Audio is not sent to the developer's caption relay.</p>
+</section>
+<section aria-labelledby="section-3"><h2 id="section-3">Local captions, dictionaries and settings</h2>
+<p>The app stores saved originals, translations, titles, speaker names, languages, timestamps, reading guides, dictionary entries, settings and issued QR history on your device. Sync identifiers and change records support editing, conflicts and deletion. Captions can contain personal information.</p>
+<p>Ordinary use does not require your name, address, phone number, contact list or location. The developer does not collect your captions or audio for AI training.</p>
+</section>
+<section aria-labelledby="section-4"><h2 id="section-4">Translation and Google ML Kit</h2>
+<p>Translation runs on your device after the required ML Kit models are downloaded. ML Kit does not send translation inputs or outputs to Google. Model updates and QR scanning modules require network access.</p>
+<p>ML Kit sends API performance and usage metrics to Google for maintenance, improvement and abuse detection. The app has no developer-operated advertising, behavioral tracking or analytics, but Google SDK diagnostics still apply. See <a href="https://developers.google.com/ml-kit/terms">ML Kit Terms &amp; Privacy</a>.</p>
+</section>
+<section aria-labelledby="section-5"><h2 id="section-5">Optional Google Drive sync</h2>
+<p>After you authorize a Google account, the app reads and writes saved captions and user dictionaries in that account's private app data folder. This includes caption text, translations, titles, speaker names, timestamps, readings, dictionary entries, languages, conflicts and deletion records. Audio and issued QR history are not synced.</p>
+<p>The requested Drive scope is <code>drive.appdata</code>; access to unrelated files in My Drive is not requested. The app retrieves an account identifier and email address to identify and display the selected account. Authorization tokens are handled through Google's device authorization service and are not included in caption files or relay requests.</p>
+<p>Requests use HTTPS. Drive storage is separate from the end-to-end encryption used for live caption sharing. Google's terms govern data stored by Drive. Stopping sync or disconnecting an account does not automatically erase local or previously uploaded data.</p>
+<p>Our handling of Google API data follows Google's Limited Use rules and the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>. Account data is not sold or used for advertising or developer AI training.</p>
+</section>
+<section aria-labelledby="section-6"><h2 id="section-6">Optional live caption sharing</h2>
+<p>Sharing starts only when you choose to start it. New caption text, translations, speaker names, title, language, timestamps and readings are encrypted on your device with AES-256-GCM before being sent to a Cloudflare relay. Audio, earlier saved histories, the full dictionary and settings are not sent. The decryption secret stays with client devices and the viewing link, not the relay.</p>
+<p>The relay holds the latest encrypted payload in memory. It does not write caption text, encrypted payloads or decryption keys to disk. It stores credential hashes, a session generation, expiry and last publishing time for connection management. Sessions last at most eight hours and end on Stop, expiry, or within 90 seconds of interrupted publishing; relay data and session metadata are then removed.</p>
+<p>Anyone holding the link or QR can read captions and save a copy. Saved copies and screenshots cannot be recalled. The browser viewer is served by GitHub Pages and decrypts on the viewer's device. Inform participants and obtain any necessary consent before sharing.</p>
+<p>Cloudflare and GitHub may process connection metadata such as IP addresses and access times under their own policies. Content encryption does not anonymize connection metadata.</p>
+</section>
+<section aria-labelledby="section-7"><h2 id="section-7">Files, scanning and permissions</h2>
+<p>Exported <code>.fumicap</code> files contain titles, caption text, translations, speakers, timestamps and readings, without audio or the full dictionary. The app does not encrypt these exported files. You choose the destination and recipients; their services' terms apply.</p>
+<p>QR scanning uses Google's scanning interface or an image you select. The developer does not receive the image. Microphone, connected audio device and notification permissions support their corresponding features and can be changed in device settings.</p>
+</section>
+<section aria-labelledby="section-8"><h2 id="section-8">Retention and deletion</h2>
+<p>Local captions, dictionary entries and QR history remain until you delete them or clear the app's data. When sync is enabled, caption and dictionary deletions propagate after successful communication. Content-free deletion markers and sync identifiers may remain to prevent deleted items from returning.</p>
+<p>Uninstalling the app alone does not erase Drive data, exported files or recipients' copies. See <a href="data-deletion.html">data deletion instructions</a>. External speech services and SDK providers control their own retention through their settings and policies.</p>
+</section>
+<section aria-labelledby="section-9"><h2 id="section-9">Contact and changes</h2>
+<p>Support emails and their contents are used to respond to your inquiry. Do not send audio, actual caption content, passwords or authorization codes. You can also request deletion of support correspondence at the address below.</p>
+<p>Provider: Fumikazu Kondo<br>Contact: <a href="mailto:kondofumikazu@icloud.com">kondofumikazu@icloud.com</a></p>
+<p>Changes to this policy will be indicated by an updated date on this page.</p>
+</section>
+<section aria-labelledby="section-10"><h2 id="section-10">External service information</h2>
+<ul>
+<li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+<li><a href="https://developers.google.com/ml-kit/terms">Google ML Kit Terms &amp; Privacy</a></li>
+<li><a href="https://developers.google.com/workspace/drive/api/guides/appdata">Google Drive application data</a></li>
+<li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a></li>
+<li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a></li>
+</ul>
+</section>
+</main>
+<footer>© 2026 Fumikazu Kondo · <a href="mailto:kondofumikazu@icloud.com">kondofumikazu@icloud.com</a><br><a href="../../index.html">Apple versions and other languages</a></footer>
+</body>
+</html>

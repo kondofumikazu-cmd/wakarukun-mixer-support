@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="KF文字起こしミキサー · Android / Chromebook · データの削除手順">
+<title>データの削除手順 · KF文字起こしミキサー</title>
+<link rel="canonical" href="https://kondofumikazu-cmd.github.io/wakarukun-mixer-support/android/ja/data-deletion.html">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">本文へ</a>
+<header><a href="../index.html">KF文字起こしミキサー</a><nav aria-label="ページ"><a href="privacy.html">プライバシーポリシー</a>
+<a href="support.html">サポート</a>
+<a href="data-deletion.html" aria-current="page">データの削除手順</a>
+<a href="../en/data-deletion.html" lang="en">English</a></nav></header>
+<main id="main">
+<p class="eyebrow">Android / Chromebook</p>
+<h1>データの削除手順</h1>
+<p class="app">KF文字起こしミキサー</p>
+<p class="updated">更新日: <time datetime="2026-10-23">2026-10-23</time></p>
+<aside class="contents"><h2>目次</h2><ul>
+<li><a href="#section-1">アカウントについて</a></li>
+<li><a href="#section-2">保存字幕・辞書を個別に削除する</a></li>
+<li><a href="#section-3">Googleドライブの同期データをすべて削除する</a></li>
+<li><a href="#section-4">端末内のデータをすべて消す</a></li>
+<li><a href="#section-5">字幕共有と受信コピー</a></li>
+<li><a href="#section-6">外部サービス・お問い合わせ情報</a></li>
+</ul></aside>
+<section aria-labelledby="section-1"><h2 id="section-1">アカウントについて</h2>
+<p>KF文字起こしミキサーには、アプリ独自のアカウントはありません。Googleアカウントは任意のDrive同期に使います。以下の操作で、端末・同期先・共有先のデータをそれぞれ管理できます。</p>
+</section>
+<section aria-labelledby="section-2"><h2 id="section-2">保存字幕・辞書を個別に削除する</h2>
+<ol>
+<li>保存字幕は「保存済み字幕」で対象を選び、削除します。ユーザー辞書は「辞書」で対象の登録語を削除します。QR発行履歴もアプリ内で対象を削除します。</li>
+<li>Drive同期を使っている場合、接続と同期を有効にした状態で削除し、「今すぐ同期」が完了したことを確認します。オフラインの端末には次回の同期成功時に反映されます。</li>
+<li>削除した内容の復活を防ぐため、本文を含まない削除記録や同期の識別情報が残る場合があります。同期領域ごと消す場合は次の手順を使います。</li>
+</ol>
+</section>
+<section aria-labelledby="section-3"><h2 id="section-3">Googleドライブの同期データをすべて削除する</h2>
+<ol>
+<li>再アップロードを防ぐため、同期に使ったすべての端末で「同期を停止」を実行します。必要なデータは先にご自身で書き出して保管してください。</li>
+<li>ブラウザで<a href="https://drive.google.com/drive/settings">Googleドライブの設定</a>を開き、「アプリの管理」でこのアプリを探します。</li>
+<li>アプリの「オプション」から「非表示のアプリデータを削除」を選び、確認します。表示文言はGoogleの画面や言語によって異なる場合があります。</li>
+<li>不要なら、アプリの「Googleアカウントの接続を解除」または<a href="https://myaccount.google.com/connections">Googleアカウントの接続管理</a>でアクセス許可も解除します。接続解除だけでは保存済みのDriveデータは消えません。</li>
+<li>この削除はアプリ専用領域の同期データを対象とします。端末内のデータや手動でDriveに書き出したファイルは別に削除してください。端末にデータを残したまま同期を再開すると、その内容が再度送信される場合があります。</li>
+</ol>
+</section>
+<section aria-labelledby="section-4"><h2 id="section-4">端末内のデータをすべて消す</h2>
+<p>必要な共有を停止し、上記のDriveデータ削除を終えてから、端末設定のアプリ情報でこのアプリのストレージ／データを消去します。端末のアプリデータ領域が消去される方法でアンインストールすることもできます。メニュー名はAndroid・Chromebookや端末の種類によって異なります。</p>
+<p>ダウンロードフォルダや選択した保存先に書き出したファイルは、ファイルアプリなどで別に削除してください。端末のデータ消去はDrive、共有先、外部音声認識サービスのデータを削除する操作ではありません。</p>
+</section>
+<section aria-labelledby="section-5"><h2 id="section-5">字幕共有と受信コピー</h2>
+<p>配信元で共有を停止すると、中継サーバーの共有データを削除します。停止できない場合でも共有期限は最大8時間で、送信が途絶えてから90秒以内に終了します。閲覧者が自分の端末へ保存したコピーや画面撮影は、配信元から削除できません。相手に直接削除を依頼してください。</p>
+</section>
+<section aria-labelledby="section-6"><h2 id="section-6">外部サービス・お問い合わせ情報</h2>
+<p>外部音声認識やGoogle SDKが処理した情報は、各提供者のアカウント設定・プライバシーポリシーで管理します。開発者は利用者のGoogleドライブや音声認識サービス内の情報を、サポート窓口から直接消すことはできません。</p>
+<p>問い合わせメールの削除依頼や手順の相談は、<a href="mailto:kondofumikazu@icloud.com">kondofumikazu@icloud.com</a>へお送りください。対象の問い合わせ日時など、特定に必要な最小限の情報を記載してください。パスワード、認証コード、音声・字幕の実データは送らないでください。</p>
+<p><a href="https://support.google.com/drive/answer/6374270?hl=ja">Google公式：非表示のアプリデータの削除</a> · <a href="privacy.html">プライバシーポリシー</a></p>
+</section>
+</main>
+<footer>© 2026 Fumikazu Kondo · <a href="mailto:kondofumikazu@icloud.com">kondofumikazu@icloud.com</a><br><a href="../../index.html">Apple版・その他の言語</a></footer>
+</body>
+</html>
