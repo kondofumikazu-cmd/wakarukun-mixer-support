@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src wss://fumixer-caption-sharing.kondofumikazu.workers.dev; base-uri 'none'; form-action 'none'">
   <title>リアルタイム字幕 · KF文字起こしミキサー</title>
   <link rel="stylesheet" href="./viewer.css?v=20261025-collaboration1">
-  <script src="./viewer.js?v=20261025-collaboration1" type="module"></script>
+  <script src="./viewer.js?v=20261026-chronological1" type="module"></script>
 </head>
 <body>
   <header><p class="brand">KF文字起こしミキサー</p><h1 id="title">リアルタイム字幕</h1>
@@ -19,6 +19,7 @@
       <div class="entry-actions"><button id="choose-view" type="button">閲覧する</button><a id="join-app" hidden>文字起こしに参加する</a></div>
       <p>閲覧はブラウザーで利用できます。参加するには、iPhone・iPadまたはAndroidに最新版のKF文字起こしミキサーが必要です。アプリで参加者名を入力し、マイクを開始します。</p>
     </section>
+    <button id="load-older" type="button" hidden>前の字幕を表示</button>
     <div id="captions" aria-label="共有された字幕"></div><p id="empty" hidden>相手の字幕を待っています。</p>
   </main>
   <footer id="viewer-controls" hidden>
