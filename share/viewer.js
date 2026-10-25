@@ -1,4 +1,4 @@
-import { CaptionCipher } from './crypto.mjs';
+import { CaptionCipher } from './crypto.mjs?v=collaboration1';
 const status = document.getElementById('status');
 const captions = document.getElementById('captions');
 const empty = document.getElementById('empty');
