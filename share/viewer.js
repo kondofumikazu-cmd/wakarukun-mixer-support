@@ -6,10 +6,19 @@ const title = document.getElementById('title');
 const follow = document.getElementById('follow');
 const furigana = document.getElementById('furigana');
 let latest;
-let socket, timer, heartbeat, stopped = false, attempts = 0, sessionID;
+let socket, timer, heartbeat, stopped = false, viewing = false, attempts = 0, sessionID;
 const invitation = location.hash.match(/^#room=([a-f0-9]{32})&key=([A-Za-z0-9_-]{43})&v=2&relay=([A-Za-z0-9.-]+)(&reuse=1)?$/);
 const room = invitation?.[1], key = invitation?.[2], reusable = Boolean(invitation?.[4]);
 const relay = 'wss://fumixer-caption-sharing.kondofumikazu.workers.dev';
+const joinApp = document.getElementById('join-app');
+if (joinApp && invitation && invitation[3] === 'fumixer-caption-sharing.kondofumikazu.workers.dev') {
+  joinApp.href = 'fumixer://join' + location.hash; joinApp.hidden = false;
+}
+document.getElementById('choose-view').addEventListener('click', () => {
+  if (viewing || stopped || !room || invitation?.[3] !== 'fumixer-caption-sharing.kondofumikazu.workers.dev') return;
+  viewing = true; document.getElementById('entry').hidden = true;
+  document.getElementById('viewer-controls').hidden = false; empty.hidden = false; connect();
+});
 document.getElementById('size').addEventListener('input', event => {
   document.documentElement.style.setProperty('--caption-size', event.target.value + 'px');
 });
@@ -111,9 +120,9 @@ async function connect() {
   });
 }
 if (!room || !key || invitation?.[3] !== 'fumixer-caption-sharing.kondofumikazu.workers.dev') finish('アプリの「共有を開始」で表示したQRコードか、閲覧リンクを開いてください。');
-else connect();
+else status.textContent = '閲覧または参加を選んでください。';
 document.addEventListener('visibilitychange', () => {
-  if (!document.hidden && !stopped && socket?.readyState === WebSocket.CLOSED) { clearTimeout(timer); connect(); }
+  if (viewing && !document.hidden && !stopped && socket?.readyState === WebSocket.CLOSED) { clearTimeout(timer); connect(); }
 });
 window.addEventListener('pagehide', () => { clearInterval(heartbeat); clearTimeout(timer); socket?.close(); });
 window.addEventListener('hashchange', () => { finish('接続を切り替えています…'); location.reload(); });
