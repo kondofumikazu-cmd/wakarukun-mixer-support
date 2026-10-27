@@ -19,7 +19,7 @@
 <p class="eyebrow">Android / Chromebook</p>
 <h1>Privacy policy</h1>
 <p class="app">KF transcription mixer</p>
-<p class="updated">Updated: <time datetime="2026-10-27">2026-10-27</time></p>
+<p class="updated">Updated: <time datetime="2026-10-28">2026-10-28</time></p>
 <aside class="contents"><h2>On this page</h2><ul>
 <li><a href="#section-1">Scope and provider</a></li>
 <li><a href="#section-2">Audio and speech recognition</a></li>
@@ -38,7 +38,7 @@
 </section>
 <section aria-labelledby="section-2"><h2 id="section-2">Audio and speech recognition</h2>
 <p>Microphone audio is used for audio processing and caption creation. Google's classic speech recognition is the default and prefers downloaded on-device models. Preparing language models may require a download. The offline preference depends on the recognition service and does not completely prohibit network use.</p>
-<p>If you select external recognition, audio and recognition hints may be sent to the speech service configured on your device, such as Google. Its settings and policies govern that processing and retention. Audio is not sent to the developer's caption relay.</p>
+<p>If you select external recognition, audio and recognition hints may be sent to the speech service configured on your device, such as Google. Its settings and policies govern that processing and retention. Comparison audio from calibrated microphones started during sharing uses the separate encrypted relay path described below.</p>
 </section>
 <section aria-labelledby="section-3"><h2 id="section-3">Local captions, dictionaries and settings</h2>
 <p>The app stores saved originals, translations, titles, speaker names, languages, timestamps, reading guides, dictionary entries, settings and issued QR history on your device. Sync identifiers and change records support editing, conflicts and deletion. Captions can contain personal information.</p>
@@ -55,9 +55,9 @@
 <p>Our handling of Google API data follows Google's Limited Use rules and the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>. Account data is not sold or used for advertising or developer AI training.</p>
 </section>
 <section aria-labelledby="section-6"><h2 id="section-6">Optional live caption sharing</h2>
-<p>Sharing starts only when you choose to start it. New caption text, translations, speaker names, title, language, timestamps and readings are encrypted on your device with AES-256-GCM before being sent to a Cloudflare relay. Audio, earlier saved histories, the full dictionary and settings are not sent. The decryption secret stays with client devices and the viewing link, not the relay.</p>
-<p>When you start a calibrated microphone during sharing, supported phones and tablets compare encrypted audio among up to eight devices on the same Wi-Fi network to reduce duplicate recognition of the same voice. Comparison audio is processed only in short memory buffers on participating devices; the app does not save it to files or send it to the caption relay or Drive. Audio comparison connection details are included in encrypted caption sharing data. Stopping the microphone or sharing also stops this audio comparison.</p>
-<p>The relay holds the latest encrypted payload in memory. It does not write caption text, encrypted payloads or decryption keys to disk. It stores credential hashes, a session generation, expiry and last publishing time for connection management. Sessions last at most eight hours and end on Stop, expiry, or within 90 seconds of interrupted publishing; relay data and session metadata are then removed.</p>
+<p>Sharing starts only when you choose to start it. New caption text, translations, speaker names, title, language, timestamps and readings are encrypted on your device with AES-256-GCM before being sent to a Cloudflare relay. Earlier saved histories, the full dictionary and settings are not sent. The decryption secret stays with client devices and the viewing link, not the relay.</p>
+<p>When you start a calibrated microphone during sharing, up to eight supported devices in the same QR room relay end-to-end encrypted comparison audio over the internet to reduce duplicate recognition. A shared Wi-Fi network is not required, and Wi-Fi or mobile data is used. Comparison audio is processed only in short memory buffers; it is not saved to files or Drive, added to history or replayed. View-only devices do not receive comparison audio. Transmission stops when the microphone or sharing stops, and local transcription continues when comparison is unavailable.</p>
+<p>The relay holds the latest caption-display ciphertext in memory. It does not write caption or comparison-audio content, ciphertext or decryption keys to disk. It stores credential hashes, a session generation, expiry and last publishing time for connection management. Sessions last at most eight hours and end on Stop, expiry, or within 90 seconds of interrupted publishing; relay data and session metadata are then removed.</p>
 <p>Anyone holding the link or QR can read captions and save a copy. Saved copies and screenshots cannot be recalled. The browser viewer is served by GitHub Pages and decrypts on the viewer's device. Inform participants and obtain any necessary consent before sharing.</p>
 <p>Cloudflare and GitHub may process connection metadata such as IP addresses and access times under their own policies. Content encryption does not anonymize connection metadata.</p>
 </section>
