@@ -15,8 +15,15 @@ const invitation = location.hash.match(/^#room=([a-f0-9]{32})&key=([A-Za-z0-9_-]
 const room = invitation?.[1], key = invitation?.[2], reusable = Boolean(invitation?.[4]);
 const relay = 'wss://fumixer-caption-sharing.kondofumikazu.workers.dev';
 const joinApp = document.getElementById('join-app');
+const joinHelp = document.getElementById('join-help');
+joinHelp.hidden = true;
 if (joinApp && invitation && invitation[3] === 'fumixer-caption-sharing.kondofumikazu.workers.dev') {
-  joinApp.href = 'fumixer://join' + location.hash; joinApp.hidden = false;
+  joinApp.hidden = false;
+  joinApp.addEventListener('click', () => {
+    if (stopped || viewing) return;
+    joinHelp.hidden = !joinHelp.hidden;
+    joinApp.setAttribute('aria-expanded', String(!joinHelp.hidden));
+  });
 }
 document.getElementById('choose-view').addEventListener('click', () => {
   if (viewing || stopped || !room || invitation?.[3] !== 'fumixer-caption-sharing.kondofumikazu.workers.dev') return;

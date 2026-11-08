@@ -6,8 +6,8 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src wss://fumixer-caption-sharing.kondofumikazu.workers.dev; base-uri 'none'; form-action 'none'">
   <title>リアルタイム字幕 · KF文字起こしミキサー</title>
-  <link rel="stylesheet" href="./viewer.css?v=20261025-collaboration1">
-  <script src="./viewer.js?v=20261026-chronological1" type="module"></script>
+  <link rel="stylesheet" href="./viewer.css?v=20261108-safejoin1">
+  <script src="./viewer.js?v=20261108-safejoin1" type="module"></script>
 </head>
 <body>
   <header><p class="brand">KF文字起こしミキサー</p><h1 id="title">リアルタイム字幕</h1>
@@ -16,7 +16,8 @@
     <section id="entry" aria-labelledby="entry-title">
       <h2 id="entry-title">この文字起こしを開く</h2>
       <p>字幕を見るか、自分のマイクで文字起こしに参加するかを選んでください。</p>
-      <div class="entry-actions"><button id="choose-view" type="button">閲覧する</button><a id="join-app" hidden>文字起こしに参加する</a></div>
+      <div class="entry-actions"><button id="choose-view" type="button">閲覧する</button><button id="join-app" type="button" aria-controls="join-help" aria-expanded="false" hidden>文字起こしに参加する</button></div>
+      <p id="join-help" role="status" hidden>アプリの「字幕共有」でQRコードを読み取ってください。同じ端末では、このページのリンクをコピーし、アプリの「字幕共有」の「リンク」欄に貼り付けて受信を開始できます。参加者名を入力し、「文字起こしに参加」でマイクを開始します。</p>
       <p>閲覧はブラウザーで利用できます。参加するには、iPhone・iPadまたはAndroidに最新版のKF文字起こしミキサーが必要です。アプリで参加者名を入力し、マイクを開始します。</p>
     </section>
     <button id="load-older" type="button" hidden>前の字幕を表示</button>
