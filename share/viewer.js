@@ -14,7 +14,7 @@ let connecting = false, connectionID = 0, suspended = false;
 const invitation = location.hash.match(/^#room=([a-f0-9]{32})&key=([A-Za-z0-9_-]{43})&v=2&relay=([A-Za-z0-9.-]+)(&reuse=1)?$/);
 const room = invitation?.[1], key = invitation?.[2], reusable = Boolean(invitation?.[4]);
 const relay = 'wss://fumixer-caption-sharing.kondofumikazu.workers.dev';
-for (const [buttonID, helpID, action] of [['join-app', 'join-help', 'join'], ['view-app', 'view-help', 'view']]) {
+for (const [buttonID, helpID, action] of [['join-app', 'join-help', 'join']]) {
   const button = document.getElementById(buttonID), help = document.getElementById(helpID);
   help.hidden = true;
   if (button && invitation && invitation[3] === 'fumixer-caption-sharing.kondofumikazu.workers.dev') {
@@ -27,11 +27,20 @@ for (const [buttonID, helpID, action] of [['join-app', 'join-help', 'join'], ['v
     });
   }
 }
-document.getElementById('choose-view').addEventListener('click', () => {
+const chooseView = document.getElementById('choose-view');
+if (invitation && invitation[3] === 'fumixer-caption-sharing.kondofumikazu.workers.dev') {
+  chooseView.href = 'https://fumixer-caption-sharing.kondofumikazu.workers.dev/open/view' + invitation[0];
+  chooseView.setAttribute('aria-disabled', 'false');
+}
+chooseView.addEventListener('click', event => {
+  if (viewing || stopped || !room || invitation?.[3] !== 'fumixer-caption-sharing.kondofumikazu.workers.dev') { event.preventDefault(); return; }
+  if (chooseView.tagName !== 'A') { event.preventDefault(); startViewing(); }
+});
+function startViewing() {
   if (viewing || stopped || !room || invitation?.[3] !== 'fumixer-caption-sharing.kondofumikazu.workers.dev') return;
   viewing = true; document.getElementById('entry').hidden = true;
   document.getElementById('viewer-controls').hidden = false; empty.hidden = false; connect();
-});
+}
 document.getElementById('size').addEventListener('input', event => {
   document.documentElement.style.setProperty('--caption-size', event.target.value + 'px');
 });
@@ -148,6 +157,7 @@ async function connect() {
 }
 if (!room || !key || invitation?.[3] !== 'fumixer-caption-sharing.kondofumikazu.workers.dev') finish('アプリの「共有を開始」で表示したQRコードか、閲覧リンクを開いてください。');
 else status.textContent = '閲覧または参加を選んでください。';
+if (location.search === '?browser=1') startViewing();
 document.addEventListener('visibilitychange', () => {
   if (viewing && !document.hidden && !stopped && socket?.readyState === WebSocket.CLOSED) { clearTimeout(timer); connect(); }
 });

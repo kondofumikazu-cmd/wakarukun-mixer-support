@@ -6,8 +6,8 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src wss://fumixer-caption-sharing.kondofumikazu.workers.dev; base-uri 'none'; form-action 'none'">
   <title>リアルタイム字幕 · KF文字起こしミキサー</title>
-  <link rel="stylesheet" href="./viewer.css?v=20261108-safejoin1">
-  <script src="./viewer.js?v=20261119-appopen2" type="module"></script>
+  <link rel="stylesheet" href="./viewer.css?v=20261119-smartview3">
+  <script src="./viewer.js?v=20261119-smartview3" type="module"></script>
 </head>
 <body>
   <header><p class="brand">KF文字起こしミキサー</p><h1 id="title">リアルタイム字幕</h1>
@@ -16,10 +16,9 @@
     <section id="entry" aria-labelledby="entry-title">
       <h2 id="entry-title">この文字起こしを開く</h2>
       <p>字幕を見るか、自分のマイクで文字起こしに参加するかを選んでください。</p>
-      <div class="entry-actions"><button id="choose-view" type="button">ブラウザーで閲覧する</button><button id="view-app" type="button" aria-controls="view-help" aria-expanded="false" hidden>アプリで閲覧する</button><button id="join-app" type="button" aria-controls="join-help" aria-expanded="false" hidden>文字起こしに参加する</button></div>
-      <p id="view-help" role="status" hidden>アプリの字幕閲覧画面を開きます。確認画面が表示されたら「開く」を選んでください。この機能に対応したバージョンのアプリが必要です。アプリが開かない場合は「ブラウザーで閲覧する」を選んでください。閲覧ではマイクを開始しません。</p>
+      <div class="entry-actions"><a id="choose-view" aria-disabled="true">閲覧する</a><button id="join-app" type="button" aria-controls="join-help" aria-expanded="false" hidden>文字起こしに参加する</button></div>
       <p id="join-help" role="status" hidden>アプリを開きます。確認画面が表示されたら「開く」を選んでください。アプリが開かない場合は、最新版をインストールするか、このページのリンクをコピーし、アプリの「字幕共有」の「リンク」欄に貼り付けて受信を開始できます。参加者名を入力し、「文字起こしに参加」でマイクを開始します。</p>
-      <p>閲覧はブラウザーで利用できます。参加するには、iPhone・iPadまたはAndroidに最新版のKF文字起こしミキサーが必要です。アプリで参加者名を入力し、マイクを開始します。</p>
+      <p>閲覧は、対応アプリがある場合はアプリで、それ以外はブラウザーで開きます。参加するには、iPhone・iPadまたはAndroidに最新版のKF文字起こしミキサーが必要です。アプリで参加者名を入力し、マイクを開始します。</p>
     </section>
     <button id="load-older" type="button" hidden>前の字幕を表示</button>
     <div id="captions" aria-label="共有された字幕"></div><p id="empty" hidden>相手の字幕を待っています。</p>
