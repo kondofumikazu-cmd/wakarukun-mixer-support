@@ -21,8 +21,9 @@ if (joinApp && invitation && invitation[3] === 'fumixer-caption-sharing.kondofum
   joinApp.hidden = false;
   joinApp.addEventListener('click', () => {
     if (stopped || viewing) return;
-    joinHelp.hidden = !joinHelp.hidden;
-    joinApp.setAttribute('aria-expanded', String(!joinHelp.hidden));
+    joinHelp.hidden = false;
+    joinApp.setAttribute('aria-expanded', 'true');
+    location.assign('fumixer://join' + invitation[0]);
   });
 }
 document.getElementById('choose-view').addEventListener('click', () => {
