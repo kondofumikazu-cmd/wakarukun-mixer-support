@@ -14,17 +14,18 @@ let connecting = false, connectionID = 0, suspended = false;
 const invitation = location.hash.match(/^#room=([a-f0-9]{32})&key=([A-Za-z0-9_-]{43})&v=2&relay=([A-Za-z0-9.-]+)(&reuse=1)?$/);
 const room = invitation?.[1], key = invitation?.[2], reusable = Boolean(invitation?.[4]);
 const relay = 'wss://fumixer-caption-sharing.kondofumikazu.workers.dev';
-const joinApp = document.getElementById('join-app');
-const joinHelp = document.getElementById('join-help');
-joinHelp.hidden = true;
-if (joinApp && invitation && invitation[3] === 'fumixer-caption-sharing.kondofumikazu.workers.dev') {
-  joinApp.hidden = false;
-  joinApp.addEventListener('click', () => {
-    if (stopped || viewing) return;
-    joinHelp.hidden = false;
-    joinApp.setAttribute('aria-expanded', 'true');
-    location.assign('fumixer://join' + invitation[0]);
-  });
+for (const [buttonID, helpID, action] of [['join-app', 'join-help', 'join'], ['view-app', 'view-help', 'view']]) {
+  const button = document.getElementById(buttonID), help = document.getElementById(helpID);
+  help.hidden = true;
+  if (button && invitation && invitation[3] === 'fumixer-caption-sharing.kondofumikazu.workers.dev') {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      if (stopped || viewing) return;
+      help.hidden = false;
+      button.setAttribute('aria-expanded', 'true');
+      location.assign('fumixer://' + action + invitation[0]);
+    });
+  }
 }
 document.getElementById('choose-view').addEventListener('click', () => {
   if (viewing || stopped || !room || invitation?.[3] !== 'fumixer-caption-sharing.kondofumikazu.workers.dev') return;
